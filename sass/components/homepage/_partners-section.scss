@@ -1,0 +1,105 @@
+.partners {
+  @media screen and (max-width: 1199px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include section;
+  }
+
+  &__container {
+    @include container($display: block);
+  }
+
+  &__title {
+    text-align: center;
+
+    color: getColor(headings);
+
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 30px;
+
+      @include font-preset(700, 28px, 32px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 50px;
+
+      @include font-preset(700, 36px, 42px);
+    }
+  }
+}
+
+.company {
+  display: flex;
+
+  @media screen and (max-width: 1199px) {
+    flex-wrap: wrap;
+
+    margin: -15px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__link {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.company__element {
+  width: 170px;
+
+  padding: 16px 32px;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
+
+    padding: 16px 0;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-basis: calc((100% - 6 * 15px) / 3);
+    margin: 15px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
+
+    @media screen and (max-width: 1199px) {
+      margin-right: 15px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-color: getColor(accent);
+
+    @include transition(border-color);
+
+    cursor: pointer;
+  }
+}
+
+.company__icon {
+  fill: #afb1b8;
+
+  transition: fill getTransition(speed) getTransition(speed-func);
+
+  .company__element:hover &,
+  .company__element:focus & {
+    fill: getColor(accent);
+  }
+}

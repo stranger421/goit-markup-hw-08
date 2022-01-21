@@ -1,0 +1,92 @@
+.advantagies {
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @extend %visually-hidden;
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include section;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pluses {
+    flex-basis: calc(100% / 4 - 30px);
+    margin-left: 30px;
+    margin-top: 0;
+
+    &__item:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .pluses {
+    @include grid(100%, 2);
+    margin-top: -30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pluses {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.card {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  margin-bottom: 30px;
+
+  border-radius: 4px;
+
+  background-color: getColor(background-alt);
+
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+
+    min-width: 270px;
+    padding-left: 100px;
+    padding-right: 100px;
+    &:not(:last-child) {
+      margin-right: 30px;
+      width: 270px;
+      height: 100;
+    }
+  }
+
+  &__label {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    line-height: lineHeight(14px, 16px);
+
+    text-transform: uppercase;
+    color: getColor(headings);
+  }
+
+  &__meta {
+    @include font-preset;
+  }
+}

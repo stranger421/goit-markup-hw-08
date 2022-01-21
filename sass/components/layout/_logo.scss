@@ -1,0 +1,28 @@
+.logo,
+.header__logo,
+.footer__logo {
+  font-family: $font-second;
+
+  @media screen and (max-width: 1199px) {
+    @include font-preset(700, 24px, 28px);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font-preset(700, 26px, 31px);
+  }
+}
+
+.logo {
+  color: getColor(accent);
+}
+
+.header__logo {
+  color: getColor(logo-header);
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 20px;
+
+  color: getColor(logo-footer);
+}

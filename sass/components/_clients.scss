@@ -1,0 +1,31 @@
+.clients {
+  padding: 0;
+  margin: 0;
+  @include centered-position;
+  .clients__list {
+    flex-basis: calc(100% / 6)-30px;
+    width: 170px;
+    height: 92px;
+  }
+  .clients__list:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.clients-link {
+  width: 170px;
+  height: 92px;
+  @include centered-position;
+  padding: 0;
+  border-radius: 4px;
+  border: 1px solid #afb1b8;
+  background: var(--font-color);
+  fill: var(--icon-color);
+
+  transition: fill 250ms var(--timing-function), border 250ms var(--timing-function);
+  &:hover,
+  &:focus {
+    fill: var(--active-color);
+    border: 1px solid var(--active-color);
+  }
+}
